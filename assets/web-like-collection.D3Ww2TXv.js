@@ -1,0 +1,1 @@
+const t={user_id:{rules:[{format:"string"}],defaultValue:{$env:"uid"}},collect_id:{rules:[{format:"string"}]},sort:{rules:[{format:"int"}]},create_time:{rules:[{format:"timestamp"}]}},e={};export{e,t as v};
