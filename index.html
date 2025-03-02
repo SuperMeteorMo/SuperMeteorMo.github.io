@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://env-00jxt5o5005s-static.normal.cloudstatic.cn/assets/favicon-B12cYHbj.ico" type="x-icon">
-    <title>搜脚本加速站-全网搜脚本</title>
-    <style>
-        body { margin: 0; overflow: hidden }
-        iframe {
-            width: 100vw;
-            height: 100vh;
-            border: none;
-        }
-    </style>
-</head>
-<body>
-</body>
-<script>
-        var hash;
-        window.addEventListener('message',  (e) => {
-            if (e.data.type  === 'childUpdate') {
-                document.title=e.data.title
-                window.location.hash=e.data.hash||""
-                hash=e.data.hash
-            }
-        });
-        var iframe  = document.createElement('iframe')
-        iframe.src = 'https://env-00jxt5o5005s-static.normal.cloudstatic.cn/index.html'+window.location.hash
-        document.body.append(iframe)
-        window.onhashchange = function() {
-	if (hash != window.location.hash) {
-		iframe.contentWindow?.postMessage({
-			type: 'parentUpdate',
-			hash: window.location.hash,
-		}, "*");
-	}else{
-		hash=""
-	}
-};
-</script>
-</html>
+<!doctype html><html lang=zh-CN><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>搜脚本加速站-全网搜脚本</title><style>body{margin:0;overflow:hidden}iframe{width:100vw;height:100vh;border:0}</style><body><script>
+let h,u='https://env-00jxt5o5005s-static.normal.cloudstatic.cn',i=document.head.appendChild(document.createElement("link")) 
+i.href=u+"/assets/favicon-B12cYHbj.ico",i.rel="icon" 
+addEventListener("message",e=>e.data.type==="childUpdate"&&(document.title!=e.data.title ||location.hash!=e.data.hash)&&(h=e.data.hash,location.hash=h,document.title=e.data.title)) 
+const f=document.body.appendChild(document.createElement("iframe")) 
+f.src=u+`/index.html${location.hash}` 
+onhashchange=()=>h!=location.hash&&f.contentWindow?.postMessage({type:"parentUpdate",hash:location.hash},"*")</script> 
