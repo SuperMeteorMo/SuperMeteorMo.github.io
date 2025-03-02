@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="/assets/uni.65531517.css">
-
-	<link rel="icon" href="/assets/favicon-B12cYHbj.ico" type="x-icon">
-    <meta charset="UTF-8" />
-    <script>
-      var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
-        CSS.supports('top: constant(a)'))
-      document.write(
-        '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
-        (coverSupport ? ', viewport-fit=cover' : '') + '" />')
-    </script>
-    <title>搜脚本</title>
-    <!--preload-links-->
-    <!--app-context-->
-    <script type="module" crossorigin src="/assets/index-86rZ-D-t.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-SIMPKSS5.css">
-  </head>
-  <body>
-    <div id="app"><!--app-html--></div>
-  </body>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://env-00jxt5o5005s-static.normal.cloudstatic.cn/assets/favicon-B12cYHbj.ico" type="x-icon">
+    <title>搜脚本加速站-全网搜脚本</title>
+    <style>
+        body { margin: 0; overflow: hidden }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script>
+        var hash;
+        window.addEventListener('message',  (e) => {
+            if (e.data.type  === 'childUpdate') {
+                document.title=e.data.title
+                window.location.hash=e.data.hash||""
+                hash=e.data.hash
+            }
+        });
+        var iframe  = document.createElement('iframe')
+        iframe.src = 'https://env-00jxt5o5005s-static.normal.cloudstatic.cn/index.html'+window.location.hash
+        document.body.append(iframe)
+        window.onhashchange = function() {
+	if (hash != window.location.hash) {
+		iframe.contentWindow?.postMessage({
+			type: 'parentUpdate',
+			hash: window.location.hash,
+		}, "*");
+	}else{
+		hash=""
+	}
+};
+</script>
 </html>
