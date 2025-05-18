@@ -1,7 +1,19 @@
-<!doctype html><html lang=zh-CN><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name="description" content="Greasyfork镜像站-Scriptcat镜像站-openuserjs镜像站-gist镜像站- 用户脚本镜像加速站，轻松安装和使用各种脚本"><meta name="keywords" content="soujiaoben,搜脚本,搜脚本加速站,Greasyfork,Greasyfork镜像,Scriptcat,Scriptcat镜像,openuserjs,openuserjs镜像,gist,gist镜像,用户脚本,Tampermonkey,Violentmonkey,脚本下载,油猴脚本,脚本猫脚本,浏览器插件,网页脚本,OCS网课助手,FCQ网课"><meta name="robots" content="all"><meta property="og:title" content="搜脚本加速站-全网搜脚本"><meta property="og:description" content="Greasyfork镜像站 - 用户脚本镜像加速站，轻松安装和使用各种脚本"><meta property="og:type" content="website"><link rel="canonical" href="https://env-00jxt5o5005s-static.normal.cloudstatic.cn"><title>搜脚本加速站-全网搜脚本</title><style>body{margin:0;overflow:hidden}iframe{width:100vw;height:100vh;border:0}</style><body><script>
-	let h,u='https://env-00jxt5o5005s-static.normal.cloudstatic.cn',i=document.head.appendChild(document.createElement("link")) 
-	i.href=u+"/assets/favicon-B12cYHbj.ico",i.rel="icon" 
-	addEventListener("message",e=>e.data.type==="childUpdate"&&(document.title!=e.data.title ||location.hash!=e.data.hash)&&(h=e.data.hash,location.hash=h,document.title=e.data.title)) 
+<!doctype html><html lang=zh-CN><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name="description" content="Greasyfork镜像站-Scriptcat镜像站-openuserjs镜像站-gist镜像站- 用户脚本镜像加速站，轻松安装和使用各种脚本"><meta name="keywords" content="soujiaoben,搜脚本,搜脚本加速站,Greasyfork,Greasyfork镜像,Scriptcat,Scriptcat镜像,openuserjs,openuserjs镜像,gist,gist镜像,用户脚本,Tampermonkey,Violentmonkey,脚本下载,油猴脚本,脚本猫脚本,浏览器插件,网页脚本,OCS网课助手,FCQ网课"><meta name="robots" content="all"><meta property="og:title" content="搜脚本加速站-全网搜脚本"><meta property="og:description" content="Greasyfork镜像站 - 用户脚本镜像加速站，轻松安装和使用各种脚本"><meta property="og:type" content="website"><link rel="canonical" href="https://env-00jxt5o5005s-static.normal.cloudstatic.cn"><title>搜脚本加速站-全网搜脚本</title><style>body{margin:0;overflow:hidden}iframe{width:100vw;height:100vh;border:0}</style><body> <script>
+	let h,u='https://env-00jxtfldmkqy-static.normal.cloudstatic.cn',i=document.head.appendChild(document.createElement("link")),d=document.body.appendChild(document.createElement("div"))
+	d.innerText="正在加载中,如等待一分钟后依旧无法正常访问请加q群:915337090 反馈"
+	i.href=u+"/assets/favicon-B12cYHbj.ico",i.rel="icon",
+	i.style.display="none"
+	addEventListener("message",e=>{
+		// console.log(e.data)
+		if(e.data.type==="childUpdate"){
+			(document.title!=e.data.title ||location.hash!=e.data.hash)&&(h=e.data.hash,location.hash=h,document.title=e.data.title)
+			d.style.display="none";
+		}
+		if(e.data.type==="childShow"){
+			i.style.display="block";
+			d.style.display="none";
+		}
+	}) 
 	const f=document.body.appendChild(document.createElement("iframe")) 
 	f.src=u+`/index.html${location.hash}` 
 	onhashchange=()=>h!=location.hash&&f.contentWindow?.postMessage({type:"parentUpdate",hash:location.hash},"*")</script> 
